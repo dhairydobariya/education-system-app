@@ -1,0 +1,560 @@
+{
+	"info": {
+		"_postman_id": "456e9e93-4d88-4458-bbe6-ab5256a74502",
+		"name": "e-s-a",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31742901"
+	},
+	"item": [
+		{
+			"name": "user Routes",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"dhairy\",\r\n    \"email\":\"dhairy@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"c\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Routes",
+			"item": [
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"ITS TEMP COURSES\",\r\n    \"description\": \"A comprehensive introduction to machine learning concepts and techniques.\",\r\n    \"teacher\": \"66f5e78b2b01f66ae1b8e207\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/admin/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"admin",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/admin/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"admin",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"advance  to Machine Learning\",\r\n    \"description\": \"A comprehensive introduction to machine learning concepts and techniques.\",\r\n    \"teacher\": \"66f5a81cc2281d0dbbf019f8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/admin/courses/66f5d4d835493f17f8e07b70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"admin",
+								"courses",
+								"66f5d4d835493f17f8e07b70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/admin/courses/66f5d4d835493f17f8e07b70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"admin",
+								"courses",
+								"66f5d4d835493f17f8e07b70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enroll Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentIds\": [\r\n        \"66f5e77a2b01f66ae1b8e203\", \r\n        \"66f5e7802b01f66ae1b8e205\"  \r\n    ]\r\n}   \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/admin/courses/66f5e7b32b01f66ae1b8e20c/enroll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"admin",
+								"courses",
+								"66f5e7b32b01f66ae1b8e20c",
+								"enroll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\":  \"66f5e77a2b01f66ae1b8e203\"\r\n    \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/admin/courses/66f5e7b32b01f66ae1b8e20c/unenroll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"admin",
+								"courses",
+								"66f5e7b32b01f66ae1b8e20c",
+								"unenroll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher Routes",
+			"item": [
+				{
+					"name": "Update Course Content",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"description\":\"Updated Content\",\"title\":\"mathch\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/teacher/courses/66f5abde1df891bcd55b08fe/content",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"teacher",
+								"courses",
+								"66f5abde1df891bcd55b08fe",
+								"content"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Grade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"studentId\":\"{studentId}\",\"grade\":\"A\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/teacher/courses/{courseId}/grades",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"teacher",
+								"courses",
+								"{courseId}",
+								"grades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course Analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/teacher/courses/66f5e7b32b01f66ae1b8e20c/analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"teacher",
+								"courses",
+								"66f5e7b32b01f66ae1b8e20c",
+								"analytics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Assignment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"Assignment Title\",\"description\":\"Assignment Description\",\"dueDate\":\"2024-12-01\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/teacher/courses/66f5e7b32b01f66ae1b8e20c/assignments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"teacher",
+								"courses",
+								"66f5e7b32b01f66ae1b8e20c",
+								"assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Assignment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"Updated Title\",\"description\":\"Updated Description\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/teacher/assignments/66f5ebf41463ae339de9ae3c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"teacher",
+								"assignments",
+								"66f5ebf41463ae339de9ae3c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Assignment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/teacher/assignments/66f5ebf41463ae339de9ae3c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"teacher",
+								"assignments",
+								"66f5ebf41463ae339de9ae3c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student Routes",
+			"item": [
+				{
+					"name": "Enroll in Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/student/courses/66f5e7b32b01f66ae1b8e20c/enroll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"student",
+								"courses",
+								"66f5e7b32b01f66ae1b8e20c",
+								"enroll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Enrolled Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/student/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"student",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Grades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/student/grades",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"grades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Assignment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"assignmentId\":\"{assignmentId}\",\"fileUrl\":\"http://example.com/assignment.pdf\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/student/assignments/66f5ebf41463ae339de9ae3c/submit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"student",
+								"assignments",
+								"66f5ebf41463ae339de9ae3c",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assignments for a Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/student/courses/66f5e7b32b01f66ae1b8e20c/assignments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"student",
+								"courses",
+								"66f5e7b32b01f66ae1b8e20c",
+								"assignments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
